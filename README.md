@@ -1,0 +1,2 @@
+# RuletaDaily
+Ruleta para Daily 
