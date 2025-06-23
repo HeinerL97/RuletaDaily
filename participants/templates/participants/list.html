@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {% block content %}
+<div class="containers">
+    <div class="column participant-section">
+        <h2>participants</h2>
+        <div class="participant-list">
+            {% for p in participants %}
+            <div class="participant-card">
+                <form action="{% url 'delete_participant' p.pk %}" method="post" class="inline-form">
+                    {% csrf_token %}
+                    <button class="delete-btn" title="Eliminar">-</button>
+                </form>
+                {% if p.image %}
+                <img src="{{ p.image.url }}" alt="{{ p.name }}" />
+                {% else %}
+                <div class="participant-initial">{{ p.initial }}</div>
+                {% endif %}
+                <div>{{ p.name }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Botón Agregar dentro del panel de participantes -->
+        <div class="panel-footer">
+            <button id="openModal" type="button">Agregar</button>
+            <button id="saveProjectBtn" type="button">Guardar</button>
+        </div>
+    </div>
+    <div class="column">
+        <h2>Roulette</h2>
+        <div class="ruleta-box">
+            {% if selected %} {% if selected.image %}
+            <img src="{{ selected.image.url }}" alt="{{ selected.name }}" class="selected-image" /><br />
+            {% else %}
+            <div class="selected-initial">{{ selected.initial }}</div>
+            {% endif %}
+            <div class="selected">{{ selected.name }}</div>
+            {% else %}
+            <div class="no-seleccionado">Esperando a que inicie el daily</div>
+            {% endif %}
+            <div id="timer">{% if timer %}{{ timer }}{% else %}60{% endif %}</div>
+        </div>
+
+        <!-- Botón Random dentro del panel de ruleta -->
+        <div class="panel-footer">
+            <form method="post" class="no-margin">
+                {% csrf_token %}
+                <input type="hidden" name="random" value="1" />
+                <button type="submit" id="random-btn">Random</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="addModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Add Participant</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="add" value="1" />
+
+            <div class="form-group">
+                <label for="id_name">Name:</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_image">Image (optional)</label>
+                {{ form.image }}
+            </div>
+
+            <button id="submit" type="submit" class="submit-btn">Agregar</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById("openModal").onclick = function () {
+        document.getElementById("addModal").style.display = "block";
+    };
+    document.getElementById("closeModal").onclick = function () {
+        document.getElementById("addModal").style.display = "none";
+    };
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("addModal")) {
+            document.getElementById("addModal").style.display = "none";
+        }
+    };
+</script>
+
+{% if selected %}
+<script>
+    function startTimer() {
+        let counter = 60;
+        const timerEl = document.getElementById("timer");
+        timerEl.textContent = counter;
+        timerEl.classList.remove("red");
+
+        const interval = setInterval(() => {
+            counter--;
+            timerEl.textContent = counter;
+            if (counter === 10) {
+                timerEl.classList.add("red");
+            }
+            if (counter <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    }
+    window.onload = startTimer;
+</script>
+{% endif %} {% endblock %}

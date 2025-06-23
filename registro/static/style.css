@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #061a2f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+}
+
+.login-main {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-left, .login-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left {
+    background: #061a2f;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-illustration {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-right {
+    background: #061a2f;
+}
+
+.login-container {
+    background: #0b2340;
+    border-radius: 30px;
+    padding: 50px 40px 40px 40px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container h2 {
+    color: #ffa726;
+    font-size: 2.3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: none;
+    background: #17345c;
+    color: #fff;
+    font-size: 1.1em;
+    margin-top: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    background: #20406e;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px 0;
+    background: #ffa726;
+    color: #0b2340;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.6em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.submit-btn:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+.error {
+    color: #ffa726;
+    background: #2d1a00;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: #ffa726;
+    text-decoration: underline;
+}

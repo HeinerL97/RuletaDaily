@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Entorno virtual
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+*.env
+
+# Archivos de configuración y base de datos
+*.sqlite3
+db.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos de migraciones compilados
+**/migrations/__pycache__/
+**/migrations/*.pyc
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de salida/compilación
+build/
+dist/
+
+# Archivos de media y estáticos generados
+/media/
+/staticfiles/
+/static/
+
+# VSCode settings
+.vscode/

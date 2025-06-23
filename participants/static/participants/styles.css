@@ -1,0 +1,117 @@
+
+.container{
+    background-color: #ad0a0a;
+}
+.panel {
+    background: #ad0a0a;
+    border: 3px solid #1818308a;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 600px;
+    height: 600px;
+    min-width: 500px;
+    width: 45vw;
+    max-width: 700px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.panel-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.participant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.participant-card {
+    border: 2px solid #181830;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 0;
+    min-width: 90px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: #e50808;
+}
+
+.inline-form {
+    display: inline;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.delete-btn {
+    background: red;
+    color: #f7f7f7;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.selected-initial {
+    font-size: 3,8em;
+}
+.selected {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.no-seleccionado {
+    color: gray;
+    font-size: 1.3em;
+    text-align: center;
+}
+.ruleta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    border: 2px solid #181830;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+}
+#timer {
+    font-size: 2.5em;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+.red {
+    color: red;
+}
+.no-margin {
+    margin: 0;
+}
+#random-btn{
+    background-color:#072D51;
+    color:#f7f7f7;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    padding: 15px;
+    border:none;
+    cursor: pointer;
+}

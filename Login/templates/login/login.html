@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{% static 'login/style.css' %}" />
+</head>
+
+<body>
+    <div class="login-main">
+        <div class="login-left">
+            <img src="{% static 'img\logo4.png' %}" alt="Daily Roulete Ilustración"
+                class="login-illustration" />
+        </div>
+        <div class="login-right">
+            <div class="login-container">
+                <h2>Iniciar Sesión</h2>
+                {% if messages %} {% for message in messages %}
+                <div class="error">{{ message }}</div>
+                {% endfor %} {% endif %} {% if form.errors %}
+                <div class="error">{{ form.errors }}</div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="username" id="username" placeholder="Nombre de usuario" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required />
+                    </div>
+                    <button type="submit" class="submit-btn">Ingresar</button>
+                </form>
+                <div class="login-register-container">
+                    <p class="login-register-link">
+                        ¿No tienes una cuenta?
+                        <a class="register-link" href="{% url 'registro' %}">Regístrate</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

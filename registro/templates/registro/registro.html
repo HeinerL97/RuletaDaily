@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="{% static 'login/style.css' %}">
+</head>
+<body>
+    <div class="login-main">
+        <div class="login-left">
+            <img src="{% static 'img\logo4.png' %}" alt="Daily Roulete Ilustración" class="login-illustration">
+        </div>
+        <div class="login-right">
+            <div class="login-container">
+                <h2>Crear Cuenta</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.first_name.label_tag }}
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.last_name.label_tag }}
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </div>
+                    <button type="submit" class="submit-btn">Registrarme</button>
+                </form>
+                <p style="margin-top: 20px;">¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a>.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
