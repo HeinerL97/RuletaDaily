@@ -55,7 +55,9 @@ ROOT_URLCONF = 'daily_roulette.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,14 +126,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ...existing code...
 INSTALLED_APPS = [
     # ...otras apps...
-     'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'participants',
-    'roulette',
+    'proyecto',
+    'participants', 
     'Login',
     'registro',
 ]

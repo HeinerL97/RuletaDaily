@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos | Daily Roulette</title>
+    <link rel="stylesheet" href="{% static 'proyecto/styles.css' %}">
+</head>
+<body>
+    <!-- Encabezado -->
+    <div class="header">
+        <img src="{% static 'img/Logo1.png' %}" alt="Logo" class="logo" />
+        <h1 class="title">Daily Roulette</h1>
+    </div>
+
+    <!-- Panel principal -->
+    <div class="main-panel">
+        <h2>Proyectos</h2>
+        <div class="proyectos-grid">
+            {% for proyecto in proyectos %}
+            <a href="{% url 'participantes_list' proyecto.id %}" class="proyecto-card-link">
+                <div class="proyecto-card">
+                    <form method="POST" action="{% url 'proyecto:eliminar_proyecto' proyecto.id %}" class="inline-form">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-btn" title="Eliminar">×</button>
+                    </form>
+                    {% if proyecto.imagen %}
+                    <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.nombre }}" class="proyecto-img">
+                    {% endif %}
+                    <span>{{ proyecto.nombre }}</span>
+                </div>
+            </a>
+            {% empty %}
+            <div style="grid-column: 1 / -1; text-align:center; color:#aaa;">No hay proyectos aún.</div>
+            {% endfor %}
+        </div>
+        <button class="agregar-btn" id="openModal">Agregar</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Agregar Proyecto</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" id="cancelModal">Cancelar</button>
+                    <button type="submit" class="add-btn">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script para el modal -->
+    <script>
+        const modal = document.getElementById("addModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+        const cancelBtn = document.getElementById("cancelModal");
+
+        openBtn.onclick = () => modal.style.display = "flex";
+        closeBtn.onclick = () => modal.style.display = "none";
+        cancelBtn.onclick = () => modal.style.display = "none";
+
+        window.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        };
+    </script>
+</body>
+</html>

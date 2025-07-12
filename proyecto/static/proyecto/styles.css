@@ -1,0 +1,256 @@
+* {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: #07162b;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 0px 40px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.title {
+  color: #F1EEE6;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+/* PANEL PRINCIPAL */
+.main-panel {
+  background: #0a2240;
+  border-radius: 32px;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.main-panel h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 32px;
+  font-weight: bold;
+  color: #F8A349;
+}
+
+/* GRID PROYECTOS */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.proyecto-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.proyecto-card {
+  position: relative;
+  background-color: #0b2a46;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  min-height: 100px;
+  cursor: pointer;
+}
+
+.proyecto-card:hover {
+  background: #183b63;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.proyecto-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  margin-bottom: 5px;
+  object-fit: cover;
+  background: #183b63;
+}
+
+.inline-form {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.delete-btn {
+  background: #E13D22;
+  color: #fff;
+  border: none;
+  border-radius: 100%;
+  width: 24px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* BOTÓN AGREGAR */
+.agregar-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+  background: #ffb02e;
+  color: #0a2240;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 56px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.agregar-btn:hover {
+  background: #ffcb6b;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENIDO DEL MODAL */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 385px;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content form {
+  flex-direction: column;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"],
+.modal-content textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  color: #333;
+}
+
+/* BOTONES MODAL */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cancel-btn {
+  background: #1a1a3d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.add-btn {
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  flex: 1;
+}
+
+/* CIERRE */
+.close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.8rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1); }
+}
+
+/* RESPONSIVE (opcional para pantallas pequeñas) */
+@media screen and (max-width: 480px) {
+  .main-panel {
+    margin: 16px;
+    padding: 24px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 24px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+
+  .agregar-btn {
+    font-size: 1.4rem;
+    padding: 12px 32px;
+  }
+}
