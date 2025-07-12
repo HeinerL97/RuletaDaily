@@ -62,7 +62,7 @@ RuletaDaily/
 ├── media/                 # Archivos subidos por los usuarios (si aplica)
 ├── participants/          # Gestión de participantes
 ├── proyecto/              # Módulo de proyectos
-├── registro/              # Creacion de usuario
+├── registro/              # Creación de usuario
 ├── static/                # Archivos estáticos: CSS, JS, imágenes
 ├── templates/             # Archivos HTML (interfaces del sistema)
 ├── .gitignore             # Archivos/Carpetas que Git debe ignorar
