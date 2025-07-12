@@ -1,0 +1,297 @@
+* {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #001B3A;
+}
+
+/* ENCABEZADO */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 0px 40px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.title {
+  color: #F1EEE6;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h2 {
+  color: #F8A349;
+  font-size: 2em;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.containers {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+.column {
+  background: #05274A;
+  border-radius: 22px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.participant-section {
+  align-items: center;
+}
+
+.participant-list {
+  margin-bottom: 20px;
+}
+
+/* PARTICIPANTES */
+.participant-card {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  width: 70px;
+  background-color: #082E53;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.participant-initial {
+  font-size: 3.8em;
+  font-weight: bold;
+  color: #F1EEE6;
+}
+
+.participant-card div:last-child {
+  word-break: break-word;
+  color: #F1EEE6;
+  text-align: center;
+}
+
+/* IMAGEN DE PARTICIPANTE */
+.participant-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+/* BOTÓN ELIMINAR */
+.delete-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #E13D22;
+  color: #F1EEE6;
+  border: none;
+  border-radius: 100%;
+  width: 24px;
+  height: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* RULETA */
+.ruleta-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #F1EEE6;
+}
+
+.selected-initial {
+  font-size: 8em;
+  font-weight: bold;
+  text-align: center;
+  color: #F1EEE6;
+}
+
+.selected-image {
+  width: 150px;
+  height: 150px;
+}
+
+.selected {
+  font-size: 2em;
+  color: #F1EEE6;
+  font-weight: bold;
+}
+
+#timer {
+  font-size: 2em;
+  color: #F1EEE6;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#timer.red {
+  color: #E13D22;
+}
+
+/* FOOTER */
+.panel-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+/* BOTONES GENERALES */
+#openModal, #saveProjectBtn, .submit-btn, #random-btn {
+  background-color: #ffaa4d;
+  color: #012640;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  min-width: 100px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#random-btn {
+  margin-top: 30px;
+}
+
+button:hover {
+  opacity: 0.75;
+}
+
+/* MODAL GENERAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 49, 48, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL CONTENT */
+.modal-content {
+  background: #ffffff;
+  margin: auto;
+  padding: 25px;
+  color: #05274A;
+  width: 350px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* TÍTULO MODAL */
+.modal-content h2, .modal-content h3 {
+  text-align: center;
+  color: #05274A;
+}
+
+/* CIERRE MODAL */
+.close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #05274A;
+}
+
+/* FORMULARIO */
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 60px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #05274A;
+}
+
+/* BOTONES MODAL */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-btn {
+  background-color: #ffaa4d;
+  color: #012640;
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  flex: 1;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #1a1a3d;
+  color: #F1EEE6;
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  flex: 1;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.75;
+}
+/* ANIMACIÓN */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

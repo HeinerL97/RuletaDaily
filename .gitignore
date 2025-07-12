@@ -14,8 +14,8 @@ env.bak/
 *.env
 
 # Archivos de configuración y base de datos
-*.sqlite3
-db.sqlite3
+#*.sqlite3
+#db.sqlite3
 
 # Archivos de logs
 *.log
@@ -33,9 +33,9 @@ build/
 dist/
 
 # Archivos de media y estáticos generados
-/media/
-/staticfiles/
-/static/
+#/media/
+#/staticfiles/
+#/static/
 
 # VSCode settings
 .vscode/
