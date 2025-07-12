@@ -55,21 +55,21 @@ http://127.0.0.1:8000/
 
 🗂️ Estructura del Proyecto
 
-RuletaDaily/
-├── daily_roulette/        # Lógica de la ruleta diaria
-├── env/                   # Entorno virtual (no se sube al repo)
-├── Login/                 # Módulo de autenticación
-├── media/                 # Archivos subidos por los usuarios (si aplica)
-├── participants/          # Gestión de participantes
-├── proyecto/              # Módulo de proyectos
-├── registro/              # Creación de usuario
-├── static/                # Archivos estáticos: CSS, JS, imágenes
-├── templates/             # Archivos HTML (interfaces del sistema)
-├── .gitignore             # Archivos/Carpetas que Git debe ignorar
-├── db.sqlite3             # Base de datos SQLite (para desarrollo)
-├── manage.py              # Script principal de Django
-├── README.md              # Documentación del proyecto
-└── requirements.txt       # Dependencias del proyecto
+RuletaDaily/  
+├── daily_roulette/        # Lógica de la ruleta diaria  
+├── env/                   # Entorno virtual (no se sube al repo)  
+├── Login/                 # Módulo de autenticación  
+├── media/                 # Archivos subidos por los usuarios (si aplica)  
+├── participants/          # Gestión de participantes  
+├── proyecto/              # Módulo de proyectos  
+├── registro/              # Creación de usuario  
+├── static/                # Archivos estáticos: CSS, JS, imágenes  
+├── templates/             # Archivos HTML (interfaces del sistema)  
+├── .gitignore             # Archivos/Carpetas que Git debe ignorar  
+├── db.sqlite3             # Base de datos SQLite (para desarrollo)  
+├── manage.py              # Script principal de Django  
+├── README.md              # Documentación del proyecto  
+└── requirements.txt       # Dependencias del proyecto  
 
 
 📬 Contacto
